@@ -6,6 +6,16 @@
     <link rel="stylesheet" href="webservicesjs/css/webservices.css" type="text/css" />
     <link rel="stylesheet" href="prettify/prettify.css" type="text/css" />
     <script type="text/javascript" src="prettify/prettify.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-944839-15']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 </head>
 <body onload="prettyPrint();">
     <div class="intro">
@@ -40,6 +50,14 @@
         <a name="doc"></a><h4>Documentation</h4>
         <div class="span6 left15">
             <p>Project on GitHub : <a target="_blank" href="https://github.com/funkymed/webservicesjs">https://github.com/funkymed/webservicesjs</a></p>
+            <p>You'll need to have jQuery (http://jquery.com) and Bootstrap (http://twitter.github.com/bootstrap).</p>
+
+            <p>Just add to your html page</p>
+            <pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="webservicesjs/js/webservices.min.js"&gt;
+&lt;/script&gt;</pre>
+
+            <p>And then create a JSON's object like this</p>
             <pre class="prettyprint linenums">
 var myforms = [
     {
@@ -54,12 +72,12 @@ var myforms = [
 $(myforms).webservices();</pre>
 
 
-<p>if need to to access other domain, add a proxyPath, i code a little php thing to do that :</p>
+<p>If need to to access other domain, add a proxyPath (work only in method GET), i coded a little php</p>
 <pre class="prettyprint linenums">
 var options = {proxyPath:'proxy.php?u='};
 $(myforms).webservices(options);</pre>
 
-<p>if you want to change the loader, do this :</p>
+<p>Finally, if you want to change the loader, do this :</p>
 
 <pre class="prettyprint linenums">var options = {loaderGif:'ajax-loader.gif'};
 $(myforms).webservices(options);</pre>

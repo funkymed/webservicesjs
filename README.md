@@ -12,6 +12,13 @@ Cyril Pereira http://www.cyrilpereira.com
 
 Usage:
 
+You'll need to have jQuery (http://jquery.com) and Bootstrap (http://twitter.github.com/bootstrap).
+
+Just add to your html page
+    <script type="text/javascript" src="webservicesjs/js/webservices.min.js"></script>
+
+And then create a JSON's object like this
+
 var myforms = [
     {
         action:'localfile.php?',
@@ -22,15 +29,16 @@ var myforms = [
     }
 ];
 
+Finally start the engine :
+
 $(myforms).webservices();
 
-
-if need to to access other domain, add a proxyPath, i code a little php (work only in method GET) thing to do that
+If need to to access other domain, add a proxyPath (work only in method GET), i coded a little php
 
 var options = {proxyPath:'proxy.php?u='};
 $(myforms).webservices(options);
 
-if you want to change the loader, do this :
+Finaly, if you want to change the loader, do this :
 
 var options = {loaderGif:'ajax-loader.gif'};
 $(myforms).webservices(options);
