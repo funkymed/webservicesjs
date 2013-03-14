@@ -136,7 +136,7 @@
                             $('#debug').prepend('<code>' + decodeURIComponent(url) + '</code>');
 
                             var timeEnd = new Date().getTime();
-                            $('#debug').prepend('Time : ' + ((timeEnd - timeStart)/1000) + ' secondes <br />');
+                            $('#debug').prepend('Time : ' + (timeEnd - timeStart) + ' secondes <br />');
                         }
                     });
                     return false;
