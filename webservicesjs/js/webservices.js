@@ -76,6 +76,8 @@
                 $(this).find('img').hide();
                 $(this).submit(function() {
 
+
+                    var timeStart = new Date().getTime();
                     $('#loader').show();
                     var $form = $(this);
 
@@ -121,6 +123,7 @@
                          * @param a
                          */
                         complete:function(a) {
+                            var timeStart = new Date();
                             $('#loader').hide();
                             $($form).webservices('disableForm', false);
                             $('#debug').html('<code>' + a.responseText + '</code>');
@@ -131,6 +134,9 @@
                                 $('#debug').prepend('<p style="color:red;">JSON : nok<br/>' + e.message + '</p>');
                             }
                             $('#debug').prepend('<code>' + decodeURIComponent(url) + '</code>');
+
+                            var timeEnd = new Date().getTime();
+                            $('#debug').prepend('Time : ' + ((timeEnd - timeStart)/1000) + ' secondes <br />');
                         }
                     });
                     return false;
