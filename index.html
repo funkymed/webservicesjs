@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>WebservicesJS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="webservicesjs/css/webservices.css" type="text/css" />
+    <link rel="stylesheet" href="prettify/prettify.css" type="text/css" />
+    <script type="text/javascript" src="prettify/prettify.js"></script>
+</head>
+<body onload="prettyPrint();">
+    <div class="intro">
+        <h1>WebservicesJS</h1>
+        <p>
+            Test all your webservices in easy and fast way.<br />
+            <span class="label label-warning">&nbsp;&gt; jQuery + bootstrap = webservicesJS</span>
+        </p>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <ul>
+                <li><a href="#author">Author</a></li>
+                <li><a href="#doc">Documentation</a></li>
+                <li><a href="#demo">Demo</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <a name="author"></a>
+        <h4>Author</h4>
+        <div class="span6 left15">
+            <p>
+                Cyril Pereira<br />
+                <a target="_blank" href="http://www.cyrilpereira.com">http://www.cyrilpereira.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row-fluid left0">
+        <a name="doc"></a><h4>Documentation</h4>
+        <div class="span6 left15">
+            <p></p>
+            <pre class="prettyprint linenums">
+var myforms = [
+    {
+        action:'localfile.php?',
+        title:'test',
+        inputs:[
+            {label:'field1',name:'name1',defaultvalue:'value1',type:'text'}
+        ]
+    }
+];
+
+$(myforms).webservices();</pre>
+
+
+<p>if need to to access other domain, add a proxyPath, i code a little php thing to do that :</p>
+<pre class="prettyprint linenums">
+var options = {proxyPath:'proxy.php?u='};
+$(myforms).webservices(options);</pre>
+
+<p>if you want to change the loader, do this :</p>
+
+<pre class="prettyprint linenums">var options = {loaderGif:'ajax-loader.gif'};
+$(myforms).webservices(options);</pre>
+        </div>
+    </div>
+
+    <a name="demo"></a>
+    <h4>Démo</h4>
+
+    <script type="text/javascript" src="jquery/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="webservicesjs/js/webservices.js"></script>
+    <script type="text/javascript" src="forms.js"></script>
+</body>
+</html>

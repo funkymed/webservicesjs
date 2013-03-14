@@ -1,0 +1,36 @@
+body,html
+{
+    margin-left:5px;
+}
+.disable{
+    color:gray;
+}
+#debug{
+    position:fixed;
+    overflow: auto;
+    right:5px;
+    top:5px;
+    bottom:5px;
+    background: #ececef;
+    padding: 15px;
+    -webkit-border-radius: 5px;
+}
+#forms{
+    margin: 0;
+}
+
+.gradiant{
+  padding: 10px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 50px;
+}
+
+.intro{
+    display:block;
+}
+.left0{ margin-left:0!important; }
+.left15{ margin-left:0!important; }
