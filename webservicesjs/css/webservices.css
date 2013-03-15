@@ -33,4 +33,7 @@ body,html
     display:block;
 }
 .left0{ margin-left:0!important; }
-.left15{ margin-left:0!important; }
+
+.form-horizontal .control-group {
+  margin-bottom:0;
+}

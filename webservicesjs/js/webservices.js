@@ -39,7 +39,8 @@
                 var form = this;
                 _h += '<div class="gradiant">' +
                         '<form method="'+ form.method +'" action="' + form.action + '" class="form-horizontal ">' +
-                        '<h4>' + form.title + '<img src="'+ loaderGif +'" /></h4>';
+                        '<h4>' + form.title + '<img src="'+ loaderGif +'" /><br />' +
+                        '<span class="muted">'+form.action+'</span></h4>';
 
                 for (var a in form.inputs) {
                     var d = new Date();
@@ -48,13 +49,13 @@
                     _h += '<div class="control-group">' +
                             '<label class="span2" for="' + _id + '">' + input.label + '</label>' +
                             '<div class="controls">' +
-                                '<input class="span12" id="' + _id + '" name="' + input.name + '" type="' + input.type + '" value="' + input.defaultvalue + '"/>' +
+                                '<input class="span12 input-mini" id="' + _id + '" name="' + input.name + '" type="' + input.type + '" value="' + input.defaultvalue + '"/>' +
                             '</div>' +
                           '</div>';
                 }
                 _h += '<div class="control-group">' +
                         '<div class="controls">' +
-                            '<input type="submit" class="btn" />' +
+                            '<input type="submit" class="btn btn-primary btn-mini" />' +
                         '</div>' +
                       '</div>';
 
