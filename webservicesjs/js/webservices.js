@@ -127,7 +127,9 @@
                             $('#debug').html('<div class="well">Time : ' + (timeEnd - timeStart)/1000 + ' secondes </div>');
                             
                             var info ='<div class="alert alert-info">' +
-                                    '<h4>Webservice path</h4>';
+                                    '<h4>Webservice path</h4>' +
+                                    'method : ' + $form.attr('method') + '<br/>';
+
                             if(useProxy)
                             {
                                 info+='proxy : ' + url + '<br/>';
