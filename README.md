@@ -23,6 +23,7 @@ var myforms = [
     {
         action:'http://www.urlwebservices.com/yourwebservices.php',
         title:'test',
+        method:'GET',
         inputs:[
             {label:'field1',name:'name1',defaultvalue:'value1',type:'text'}
         ]
