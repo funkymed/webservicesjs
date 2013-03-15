@@ -120,6 +120,9 @@
                             $('#loader').hide();
                             $($form).webservices('disableForm', false);
 
+
+                            $('#debug').html('<div class="well">Time : ' + (timeEnd - timeStart)/1000 + ' secondes </div>');
+                            
                             var info ='<div class="alert alert-info">' +
                                     '<h4>Webservice path</h4>';
                             if(useProxy)
@@ -130,7 +133,7 @@
                                 info+='<p>url : ' + url + '</p>';
                             }
                             info+='</div>';
-                            $('#debug').html(info);
+                            $('#debug').append(info);
 
                             try {
                                 JSON.parse(a.responseText); // json validation
@@ -139,7 +142,7 @@
                                 $('#debug').append('<div class="alert alert-error"><h4>JSON</h4>format not valid!</div>');
                             }
 
-                            $('#debug').append('<div class="alert"><h4>Time</h4>' + (timeEnd - timeStart)/1000 + ' secondes </div>');
+
 
                             $('#debug').append('<h4>ResponseText</h4><pre>' + a.responseText + '</pre>');
 
