@@ -1,9 +1,11 @@
-/**
- * webservices.js
- * jQuery plugin by Cyril Pereira
- * cyril.pereira@gmail.com
+/*!
+ * WebservicesJS v1
+ *
+ * Copyright 2013 Cyril Pereira
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
  */
-
 (function($) {
 
     var methods;
