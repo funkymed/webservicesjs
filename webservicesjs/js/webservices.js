@@ -68,7 +68,8 @@
          */
         initForm : function(options) {
 
-            var encodeUri = options.proxyPath ? true : false,
+            var useProxy = options.proxyPath ? true : false,
+                loaderGif = options.loaderGif ? options.loaderGif : 'ajax-loader.gif',
                 proxyPath = options.proxyPath ? options.proxyPath : '';
 
             $('#loader').hide();
@@ -83,60 +84,65 @@
 
                     var url = $form.attr('action');
 
-
                     var type = ($form.attr('method')=='GET') ? 'get' : 'post';
                     var data = {};
-                    var variables = type=='get' ? [] : {};
+                    var variables = {};
+
                     
                     $form.find('input[type=text],select').each(function() {
                         var v = $(this).val();
                         var n = $(this).attr('name');
-                        if(type=='get')
-                        {
-                            variables.push(n + '=' + v);
-                        }else{
-                            variables[n] = v;
-                        }
+                        variables[n] = v;
                     });
-                    
-                    if(type=='get')
-                    {
-                        url = url + variables.join('&');
-                        if(encodeUri)
-                        {
-                            url=proxyPath+encodeURIComponent(url);
-                        }
-                    }else{
-                        data = variables;
-                    }
 
-                    $($form).webservices('disableForm', true);
-                    $('#debug').html('processing...');
+                    if(useProxy){
+                        url=proxyPath;
+                        variables.u = $form.attr('action');
+                    }
                     
+                    $($form).webservices('disableForm', true);
+                    $('#debug').html('<img src="'+loaderGif+'" />processing...');
+
+                    var timeStart = new Date();
                     $.ajax({
                         type:type,
                         url:url,
-                        data:data,
+                        data:variables,
                         cache:false,
                         /**
                          * Display result
                          * @param a
                          */
                         complete:function(a) {
-                            var timeStart = new Date();
-                            $('#loader').hide();
-                            $($form).webservices('disableForm', false);
-                            $('#debug').html('<code>' + a.responseText + '</code>');
-                            try {
-                                JSON.parse(a.responseText); // json validation
-                                $('#debug').prepend('<p style="color:green;">JSON : ok</p>');
-                            } catch(e) {
-                                $('#debug').prepend('<p style="color:red;">JSON : nok<br/>' + e.message + '</p>');
-                            }
-                            $('#debug').prepend('<code>' + decodeURIComponent(url) + '</code>');
 
                             var timeEnd = new Date().getTime();
-                            $('#debug').prepend('Time : ' + (timeEnd - timeStart) + ' secondes <br />');
+                            
+                            $('#loader').hide();
+                            $($form).webservices('disableForm', false);
+
+                            var info ='<div class="alert alert-info">' +
+                                    '<h4>Webservice path</h4>';
+                            if(useProxy)
+                            {
+                                info+='proxy : ' + url + '<br/>';
+                                info+='url : ' + $form.attr('action');
+                            }else{
+                                info+='<p>url : ' + url + '</p>';
+                            }
+                            info+='</div>';
+                            $('#debug').html(info);
+
+                            try {
+                                JSON.parse(a.responseText); // json validation
+                                $('#debug').append('<div class="alert alert-success"><h4>JSON</h4>format valid</div>');
+                            } catch(e) {
+                                $('#debug').append('<div class="alert alert-error"><h4>JSON</h4>format not valid!</div>');
+                            }
+
+                            $('#debug').append('<div class="alert"><h4>Time</h4>' + (timeEnd - timeStart)/1000 + ' secondes </div>');
+
+                            $('#debug').append('<h4>ResponseText</h4><pre>' + a.responseText + '</pre>');
+
                         }
                     });
                     return false;

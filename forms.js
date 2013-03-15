@@ -4,7 +4,7 @@
 
 var myforms = [
     {
-        action:'webservices.php?',
+        action:'http://www.cyrilpereira.com/webservicesjs/webservices.php',
         title:'test GET',
         method:'GET',
         inputs:[
@@ -13,7 +13,7 @@ var myforms = [
             {label:'action',name:'action',defaultvalue:'login',type:'text'}
         ]
     },{
-        action:'webservices.php',
+        action:'http://www.cyrilpereira.com/webservicesjs/webservices.php',
         title:'Test POST',
         method:'POST',
         inputs:[
@@ -24,4 +24,5 @@ var myforms = [
     }
 ];
 
-$(myforms).webservices();
+
+$(myforms).webservices({proxyPath:'proxy.php'});

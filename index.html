@@ -61,7 +61,7 @@
             <pre class="prettyprint linenums">
 var myforms = [
     {
-        action:'localfile.php?',
+        action:'http://www.urlwebservices.com/yourwebservices.php',
         title:'test',
         inputs:[
             {label:'field1',name:'name1',defaultvalue:'value1',type:'text'}
@@ -72,9 +72,9 @@ var myforms = [
 $(myforms).webservices();</pre>
 
 
-<p>If need to to access other domain, add a proxyPath (work only in method GET), i coded a little php</p>
+<p>If need to to access other domain, add a proxyPath, take a look at proxy.php</p>
 <pre class="prettyprint linenums">
-var options = {proxyPath:'proxy.php?u='};
+var options = {proxyPath:'proxy.php'};
 $(myforms).webservices(options);</pre>
 
 <p>Finally, if you want to change the loader, do this :</p>
