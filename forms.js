@@ -25,4 +25,4 @@ var myforms = [
 ];
 
 
-$(myforms).webservices({proxyPath:'proxy.php'});
+$(myforms).webservices({proxyPath:'webservicesjs/proxy.php'});

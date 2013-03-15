@@ -33,7 +33,7 @@
         formMaker:function(options) {
             var _h = '';
 
-            var loaderGif = options.loaderGif ? options.loaderGif : 'ajax-loader.gif';
+            var loaderGif = options.loaderGif ? options.loaderGif : 'webservicesjs/ajax-loader.gif';
             
             this.each(function() {
                 var form = this;
@@ -71,7 +71,7 @@
         initForm : function(options) {
 
             var useProxy = options.proxyPath ? true : false,
-                loaderGif = options.loaderGif ? options.loaderGif : 'ajax-loader.gif',
+                loaderGif = options.loaderGif ? options.loaderGif : 'webservicesjs/ajax-loader.gif',
                 proxyPath = options.proxyPath ? options.proxyPath : '';
 
             $('#loader').hide();
