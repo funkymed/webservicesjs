@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Webservicesjs by funkymed</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Webservicesjs</h1>
+        <p>Test all your webservices in easy and fast way.</p>
+
+        <p class="view"><a href="https://github.com/funkymed/webservicesjs">View the Project on GitHub <small>funkymed/webservicesjs</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/funkymed/webservicesjs/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/funkymed/webservicesjs/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/funkymed/webservicesjs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>WebservicesJS</h1>
+
+<h2>Test all your webservices in easy and fast way.</h2>
+
+<h3>Demo :</h3>
+
+<p><a href="http://www.cyrilpereira.com/webservicesjs/">http://www.cyrilpereira.com/webservicesjs/</a></p>
+
+<h3>Author :</h3>
+
+<p>Cyril Pereira <a href="http://www.cyrilpereira.com">http://www.cyrilpereira.com</a></p>
+
+<h3>Usage:</h3>
+
+<p>You'll need to have jQuery (<a href="http://jquery.com">http://jquery.com</a>) and Bootstrap (<a href="http://twitter.github.com/bootstrap">http://twitter.github.com/bootstrap</a>).</p>
+
+<p>Just add to your html page</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"webservicesjs/js/webservices.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>And then create a JSON's object like this</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myforms</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nx">action</span><span class="o">:</span><span class="s1">'http://www.urlwebservices.com/yourwebservices.php'</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span><span class="s1">'test'</span><span class="p">,</span>
+        <span class="nx">method</span><span class="o">:</span><span class="s1">'GET'</span><span class="p">,</span>
+        <span class="nx">inputs</span><span class="o">:</span><span class="p">[</span>
+            <span class="p">{</span><span class="nx">label</span><span class="o">:</span><span class="s1">'field1'</span><span class="p">,</span><span class="nx">name</span><span class="o">:</span><span class="s1">'name1'</span><span class="p">,</span><span class="nx">defaultvalue</span><span class="o">:</span><span class="s1">'value1'</span><span class="p">,</span><span class="nx">type</span><span class="o">:</span><span class="s1">'text'</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">];</span>
+</pre></div>
+
+<p>Finally start the engine :</p>
+
+<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nx">myforms</span><span class="p">).</span><span class="nx">webservices</span><span class="p">();</span>
+</pre></div>
+
+<p>If need to to access other domain, add a proxyPath, take a look at proxy.php</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span><span class="nx">proxyPath</span><span class="o">:</span><span class="s1">'proxy.php'</span><span class="p">};</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">myforms</span><span class="p">).</span><span class="nx">webservices</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+
+<p>Finaly, if you want to change the loader, do this :</p>
+
+<div class="highlight"><pre><span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span><span class="nx">loaderGif</span><span class="o">:</span><span class="s1">'ajax-loader.gif'</span><span class="p">};</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">myforms</span><span class="p">).</span><span class="nx">webservices</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/funkymed">funkymed</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-944839-15");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
