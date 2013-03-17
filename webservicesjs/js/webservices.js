@@ -103,7 +103,7 @@
                     $($form).webservices('disableForm', true);
                     $('#debug').html('<img src="'+loaderGif+'" />processing...');
 
-                    $.ajax({
+                    var xhr = $.ajax({
                         type:type,
                         url:url,
                         data:variables,
@@ -120,18 +120,28 @@
                             $($form).webservices('disableForm', false);
 
                             $('#debug').html('<div class="well">Time : ' + (timeEnd - timeStart)/1000 + ' secondes </div>');
+
+                            var header ='<div class="alert alert-block">' +
+                                    '<h4>Header</h4>' +
+                                    'Size : '+xhr.getResponseHeader('Content-Length') + ' bytes<br/>'+
+                                    'Type : '+xhr.getResponseHeader('Content-Type') + '<br/>'+
+                                    'Powered by : '+xhr.getResponseHeader('X-Powered-By') + '<br/>'+
+                                    '</div>';
+
+                            $('#debug').append(header);
                             
                             var info ='<div class="alert alert-info">' +
-                                    '<h4>Webservice path</h4>' +
-                                    'method : ' + $form.attr('method') + '<br/>';
+                                    '<h4>Request</h4>' +
+                                    'Method : ' + $form.attr('method') +'<br/>';
 
                             if(useProxy)
                             {
-                                info+='proxy : ' + url + '<br/>';
-                                info+='url : ' + $form.attr('action');
+                                info+='Proxy : ' + url + '<br/>';
+                                info+='Url : ' + $form.attr('action');
                             }else{
-                                info+='<p>url : ' + url + '</p>';
+                                info+='<p>Url : ' + url + '</p>';
                             }
+                            
                             info+='</div>';
                             $('#debug').append(info);
 
