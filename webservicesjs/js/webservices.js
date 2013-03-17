@@ -125,7 +125,7 @@
                                 JSON.parse(a.responseText); // json validation
                                 $('#debug').append('<div class="alert alert-success"><h4>JSON</h4>format valid</div>');
                             } catch(e) {
-                                $('#debug').append('<div class="alert alert-error"><h4>JSON</h4>format not valid!</div>');
+                                $('#debug').append('<div class="alert alert-error"><h4>JSON</h4>format not valid !<br/>line : '+ e.line +'<br/>error : '+ e.message +'</div>');
                             }
 
                             var header ='<div class="alert alert-block">' +
