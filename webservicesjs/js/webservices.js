@@ -121,6 +121,13 @@
 
                             $('#debug').html('<div class="well">Time : ' + (timeEnd - timeStart)/1000 + ' secondes </div>');
 
+                            try {
+                                JSON.parse(a.responseText); // json validation
+                                $('#debug').append('<div class="alert alert-success"><h4>JSON</h4>format valid</div>');
+                            } catch(e) {
+                                $('#debug').append('<div class="alert alert-error"><h4>JSON</h4>format not valid!</div>');
+                            }
+
                             var header ='<div class="alert alert-block">' +
                                     '<h4>Header</h4>' +
                                     'Size : '+xhr.getResponseHeader('Content-Length') + ' bytes<br/>'+
@@ -145,12 +152,6 @@
                             info+='</div>';
                             $('#debug').append(info);
 
-                            try {
-                                JSON.parse(a.responseText); // json validation
-                                $('#debug').append('<div class="alert alert-success"><h4>JSON</h4>format valid</div>');
-                            } catch(e) {
-                                $('#debug').append('<div class="alert alert-error"><h4>JSON</h4>format not valid!</div>');
-                            }
 
                             $('#debug').append('<h4>ResponseText</h4><pre>' + a.responseText + '</pre>');
 
