@@ -8,8 +8,7 @@
  */
 (function($) {
 
-    var methods;
-    methods = {
+    var methods = {
         /**
          * Init method webservices
          * @param options
@@ -80,7 +79,6 @@
                 $(this).find('img').hide();
                 $(this).submit(function() {
 
-
                     var timeStart = new Date().getTime();
                     $('#loader').show();
                     var $form = $(this);
@@ -91,7 +89,6 @@
                     var data = {};
                     var variables = {};
 
-                    
                     $form.find('input[type=text],select').each(function() {
                         var v = $(this).val();
                         var n = $(this).attr('name');
@@ -106,7 +103,6 @@
                     $($form).webservices('disableForm', true);
                     $('#debug').html('<img src="'+loaderGif+'" />processing...');
 
-                    var timeStart = new Date();
                     $.ajax({
                         type:type,
                         url:url,
@@ -122,7 +118,6 @@
                             
                             $('#loader').hide();
                             $($form).webservices('disableForm', false);
-
 
                             $('#debug').html('<div class="well">Time : ' + (timeEnd - timeStart)/1000 + ' secondes </div>');
                             
@@ -146,8 +141,6 @@
                             } catch(e) {
                                 $('#debug').append('<div class="alert alert-error"><h4>JSON</h4>format not valid!</div>');
                             }
-
-
 
                             $('#debug').append('<h4>ResponseText</h4><pre>' + a.responseText + '</pre>');
 
