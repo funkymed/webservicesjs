@@ -8,9 +8,9 @@ body,html
 #debug{
     position:fixed;
     overflow: auto;
-    right:5px;
-    top:5px;
-    bottom:5px;
+    right:10px;
+    top:10px;
+    bottom:10px;
     background: #ececef;
     padding: 15px;
     -webkit-border-radius: 5px;
@@ -26,7 +26,11 @@ body,html
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.gradiant:last-child{
+    margin-bottom: 10px;
 }
 
 .intro{
