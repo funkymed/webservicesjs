@@ -21,6 +21,7 @@ if(isset($_GET['u']))
     $method = 'POST';
 }
 
+
 if($url!='')
 {
     if($method=='POST')
@@ -38,6 +39,12 @@ if($url!='')
     }else{
         $arr = array();
         foreach($vars as $k=>$v) $arr[]=$k.'='.$v;
-        print file_get_contents($url.'?'.implode('&',$arr));
+
+
+        $vars = implode('&',$arr);
+        $vars = str_replace(' ','+',$vars);
+
+        
+        print file_get_contents($url.'?'.$vars);
     }
 }
