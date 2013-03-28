@@ -20,9 +20,9 @@ body,html
 }
 
 .gradiant{
-  padding: 10px;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
+    padding: 10px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -39,7 +39,7 @@ body,html
 .left0{ margin-left:0!important; }
 
 .form-horizontal .control-group {
-  margin-bottom:0;
+    margin-bottom:0;
 }
 
 .muted {

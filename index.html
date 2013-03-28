@@ -67,7 +67,6 @@ var myforms = [
 
 $(myforms).webservices();</pre>
 
-
 <p>If need to to access other domain, add a proxyPath, take a look at proxy.php</p>
 <pre class="prettyprint linenums">
 var options = {proxyPath:'proxy.php'};
@@ -77,6 +76,22 @@ $(myforms).webservices(options);</pre>
 
 <pre class="prettyprint linenums">var options = {loaderGif:'ajax-loader.gif'};
 $(myforms).webservices(options);</pre>
+
+
+
+
+<p>Now you can use your variable directly in url, in this exemple (field1) will be replaced by the value of the field</p>
+
+<pre class="prettyprint linenums">var myforms = [
+    {
+        action:'http://www.urlwebservices.com/(field1)',
+        title:'test',
+        method:'GET',
+        inputs:[
+            {label:'field1',name:'name1',defaultvalue:'value1',type:'text'}
+        ]
+    }
+];</pre>
         </div>
     </div>
 

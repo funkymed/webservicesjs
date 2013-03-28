@@ -1,4 +1,4 @@
-WebservicesJS
+#WebservicesJS
 =============
 Test all your webservices in easy and fast way.
 
@@ -46,3 +46,16 @@ Finaly, if you want to change the loader, do this :
 
 var options = {loaderGif:'ajax-loader.gif'};
 $(myforms).webservices(options);
+
+Now you can use your variable directly in url, in this exemple (field1) will be replaced by the value of the field
+
+var myforms = [
+    {
+        action:'http://www.urlwebservices.com/(field1)',
+        title:'test',
+        method:'GET',
+        inputs:[
+            {label:'field1',name:'name1',defaultvalue:'value1',type:'text'}
+        ]
+    }
+];

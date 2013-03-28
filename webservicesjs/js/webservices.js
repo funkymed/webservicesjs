@@ -45,6 +45,10 @@
                     var d = new Date();
                     var _id = 'f' + d.getTime()*Math.random();
                     var input = form.inputs[a];
+                    
+                    if(!input.defaultvalue)
+                        input.defaultvalue = '';
+                    
                     _h += '<div class="control-group">' +
                             '<label class="span2" for="' + _id + '">' + input.label + '</label>' +
                             '<div class="controls">' +
@@ -93,6 +97,7 @@
                         var v = $(this).val();
                         var n = $(this).attr('name');
                         variables[n] = v;
+                        url = url.replace('('+n+')',v);
                     });
 
                     if(useProxy){
@@ -101,7 +106,7 @@
                     }
                     
                     $($form).webservices('disableForm', true);
-                    $('#debug').html('<img src="'+loaderGif+'" />processing...');
+                    $('#debug').html('<img src="'+loaderGif+'" />Processing...');
 
                     var xhr = $.ajax({
                         type:type,
