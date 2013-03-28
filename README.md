@@ -5,23 +5,21 @@ Test all your webservices in easy and fast way.
 Info : http://funkymed.github.com/webservicesjs/
 GitHub : https://github.com/funkymed/webservicesjs
 
-Demo :
+##Demo
 
 http://www.cyrilpereira.com/webservicesjs/
 
-Author :
+##Author
 
 Cyril Pereira http://www.cyrilpereira.com
 
-Usage:
+##Documentation
 
 You'll need to have jQuery (http://jquery.com) and Bootstrap (http://twitter.github.com/bootstrap).
 
-Just add to your html page
-    <script type="text/javascript" src="webservicesjs/js/webservices.min.js"></script>
+If you got my files, no need to do more things, just edit the forms.js
 
-And then create a JSON's object like this
-
+~~~
 var myforms = [
     {
         action:'http://www.urlwebservices.com/yourwebservices.php',
@@ -32,23 +30,23 @@ var myforms = [
         ]
     }
 ];
-
+~~~
 Finally start the engine :
-
+~~~
 $(myforms).webservices();
-
+~~~
 If need to to access other domain, add a proxyPath, take a look at proxy.php
-
+~~~
 var options = {proxyPath:'proxy.php'};
 $(myforms).webservices(options);
-
+~~~
 Finaly, if you want to change the loader, do this :
-
+~~~
 var options = {loaderGif:'ajax-loader.gif'};
 $(myforms).webservices(options);
-
+~~~
 Now you can use your variable directly in url, in this exemple (field1) will be replaced by the value of the field
-
+~~~
 var myforms = [
     {
         action:'http://www.urlwebservices.com/(field1)',
@@ -59,3 +57,4 @@ var myforms = [
         ]
     }
 ];
+~~~
