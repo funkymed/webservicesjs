@@ -49,12 +49,32 @@
                     if(!input.defaultvalue)
                         input.defaultvalue = '';
                     
+
+
+                    if(input.type=='select')
+                    {
+                        _h += '<div class="control-group">' +
+                            '<label class="span2" for="' + _id + '">' + input.label + '</label>' +
+                            '<div class="controls">' +
+                                '<select class="span12 input-mini" id="' + _id + '" name="' + input.name + '">' ;
+                            
+                                for(var b in input.options)
+                                {
+                                    _h += '<option value="'+input.options[b]+'">'+b+'</option>';
+                                }
+
+                            _h +='</select>'+
+                            '</div>' +
+                          '</div>';
+                    }else{
                     _h += '<div class="control-group">' +
                             '<label class="span2" for="' + _id + '">' + input.label + '</label>' +
                             '<div class="controls">' +
                                 '<input class="span12 input-mini" id="' + _id + '" name="' + input.name + '" type="' + input.type + '" value="' + input.defaultvalue + '"/>' +
                             '</div>' +
-                          '</div>';
+                          '</div>';    
+                    }
+                    
                 }
                 _h += '<div class="control-group">' +
                         '<div class="controls">' +

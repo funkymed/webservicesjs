@@ -21,21 +21,28 @@ if(isset($_GET['u']))
     $method = 'POST';
 }
 
-
 if($url!='')
 {
     if($method=='POST')
     {
-        $postdata = http_build_query($vars);
-        $opts = array('http' =>
-                      array(
-                          'method'  => $method,
-                          'header'  => 'Content-type: application/x-www-form-urlencoded',
-                          'content' => $postdata
-                      )
-        );
-        $context  = stream_context_create($opts);
-        print file_get_contents($url, false, $context);
+        $fields_string='';
+        foreach($vars as $key=>$value) { 
+            $fields_string .= $key.'='.$value.'&'; 
+        }
+        rtrim($fields_string, '&');
+
+        $ch = curl_init();
+
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch,CURLOPT_POST, count($vars));
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+
+        $result = curl_exec($ch);
+
+        print $result;
+        
+        curl_close($ch);
+
     }else{
         $arr = array();
         foreach($vars as $k=>$v) $arr[]=$k.'='.$v;
