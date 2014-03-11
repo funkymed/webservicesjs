@@ -39,8 +39,6 @@ if($url!='')
 
         $result = curl_exec($ch);
 
-        print $result;
-        
         curl_close($ch);
 
     }else{
