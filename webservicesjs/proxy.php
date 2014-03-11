@@ -25,17 +25,13 @@ if($url!='')
 {
     if($method=='POST')
     {
-        $fields_string='';
-        foreach($vars as $key=>$value) { 
-            $fields_string .= $key.'='.$value.'&'; 
-        }
-        rtrim($fields_string, '&');
+        $postdata = http_build_query($vars);
 
         $ch = curl_init();
 
         curl_setopt($ch,CURLOPT_URL, $url);
         curl_setopt($ch,CURLOPT_POST, count($vars));
-        curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch,CURLOPT_POSTFIELDS, $postdata);
 
         $result = curl_exec($ch);
 
