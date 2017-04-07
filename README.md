@@ -7,7 +7,7 @@ GitHub : https://github.com/funkymed/webservicesjs
 
 ##Demo
 
-med.planet-d.net/demo/web/webservicesjs
+http://med.planet-d.net/demo/web/webservicesjs
 
 ##Author
 
