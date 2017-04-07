@@ -7,11 +7,11 @@ GitHub : https://github.com/funkymed/webservicesjs
 
 ##Demo
 
-http://www.cyrilpereira.com/webservicesjs/
+med.planet-d.net/demo/web/webservicesjs
 
 ##Author
 
-Cyril Pereira http://www.cyrilpereira.com
+Cyril Pereira <cyril.pereira@gmail.com>
 
 ##Documentation
 
